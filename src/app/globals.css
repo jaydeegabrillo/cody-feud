@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+:root {
+  --font-anton: "Anton";
+  --font-geist-sans: "Geist Variable";
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-anton), Impact, "Arial Narrow", sans-serif;
+
+  --color-ink: #070b1f;
+  --color-panel: #0f1638;
+  --color-panel-2: #172152;
+  --color-line: #2a3672;
+  --color-gold: #ffc934;
+  --color-gold-deep: #f0a500;
+  --color-sky: #4fb3ff;
+  --color-team1: #ff3b4a;
+  --color-team2: #2d8cff;
+  --color-strike: #ff2d3d;
+}
+
+html,
+body {
+  background: var(--color-ink);
+  color: #eef1ff;
+  font-family: var(--font-sans);
+}
+
+/* Wordmark used in the setup/host top bar */
+.logo-text {
+  font-family: var(--font-anton), Impact, "Arial Narrow", sans-serif;
+  letter-spacing: 0.04em;
+  background: linear-gradient(180deg, #fff6cf 0%, #ffd34d 45%, #f09a00 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0.06em 0 #7a3b00) drop-shadow(0 0 0.35em rgba(255, 190, 40, 0.45));
+}
+
+/* ---------------- Control UI (setup + host) ---------------- */
+
+.ui-bg {
+  background:
+    radial-gradient(ellipse 80% 40% at 50% -10%, rgba(79, 179, 255, 0.18), transparent 70%),
+    var(--color-ink);
+}
+.card {
+  background: var(--color-panel);
+  border: 1px solid var(--color-line);
+  border-radius: 14px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  border-radius: 10px;
+  padding: 0.5rem 0.9rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 1px solid var(--color-line);
+  background: var(--color-panel-2);
+  color: #eef1ff;
+  transition:
+    background 0.15s,
+    transform 0.05s,
+    border-color 0.15s;
+  cursor: pointer;
+  user-select: none;
+}
+.btn:hover {
+  background: #1f2c6a;
+  border-color: #3d4c95;
+}
+.btn:active {
+  transform: translateY(1px);
+}
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.btn-gold {
+  background: linear-gradient(180deg, #ffd34d, #f0a500);
+  color: #2a1700;
+  border-color: #ffd34d;
+}
+.btn-gold:hover {
+  background: linear-gradient(180deg, #ffdc6e, #f5b020);
+}
+.btn-danger {
+  background: #4a0f1a;
+  border-color: #8a1f30;
+  color: #ffd7dc;
+}
+.btn-danger:hover {
+  background: #66131f;
+}
+.input {
+  background: #0a1030;
+  border: 1px solid var(--color-line);
+  border-radius: 10px;
+  padding: 0.5rem 0.75rem;
+  color: #eef1ff;
+  width: 100%;
+}
+.input:focus,
+.btn:focus-visible {
+  outline: 2px solid var(--color-sky);
+  outline-offset: 1px;
+}
+.kbd {
+  font-family: ui-monospace, monospace;
+  font-size: 0.72rem;
+  padding: 0.05rem 0.35rem;
+  border-radius: 5px;
+  border: 1px solid #3d4c95;
+  background: #0a1030;
+  color: #b8c3ff;
+}
